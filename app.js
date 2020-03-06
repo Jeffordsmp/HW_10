@@ -51,6 +51,7 @@ function nextEmp(Emp) {
     } else if (Emp === "Intern") {
         newIntern()
     } else if (Emp === "I don't want to add anyone else.") {
+        console.log(employees)
         fs.writeFile(outputPath, render(employees), 'utf8', (err) => {
             if (err) throw err;
             console.log('Welcome to the Team!');
@@ -109,7 +110,7 @@ function newEngineer() {
         },
         {
             message: "What type of team member would you like to add?",
-            name: "doNext",
+            name: "Next",
             type: "list",
             choices: ["Engineer", "Intern", "I don't want to add anyone else."]
         },
